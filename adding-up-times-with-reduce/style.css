@@ -1,0 +1,32 @@
+html {
+  background-color: rgb(168, 208, 243);
+  padding: 10px;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding-right: 26px;
+}
+
+.videos li {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('music.jpg');
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.7; */
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+h2 {
+  text-align: center;
+}
