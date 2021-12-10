@@ -16,11 +16,14 @@ body {
       margin: auto;
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+      opacity: 0.7;
     }
 
     #bands li {
       border-bottom: 1px solid #efefef;
       padding: 20px;
+      list-style-type: none;
+      text-align: center;
     }
 
     #bands li:last-child {
