@@ -70,12 +70,28 @@ const de = links
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
-const sorted = people.sort(function(lastOne, nextOne){
-  const separate = lastOne.split(', ');
-  
-})
+// method 1:
+// const sorted = people.sort(function(lastOne, nextOne){
+//   const [aLast, aFirst] = lastOne.split(', ');
+//   const [bLast, bFirst] = nextOne.split(', ');
+//   return aLast > bLast ? 1 : -1;
+// })
+// console.log(sorted);
+
+//method 2:
+const sorted = people.sort();
 console.log(sorted);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+const transportation = data.reduce(function(obj, item) {
+  if (!obj[item]){
+    obj[item] = 0;
+  } else {
+    obj[item]++ // increment
+    return obj
+  }
+}, {}) // start with a blank obj {}
+console.log(transportation);
