@@ -1,6 +1,6 @@
 const checkboxes = document.querySelectorAll('.inbox input[type=checkbox]');
 
-let lastChecked;
+let lastChecked; // the first checked box
 
 function handleCheck(e) {
   // check if shift key is down
