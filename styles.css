@@ -1,3 +1,8 @@
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   text-align: center;
   color: #212121;
@@ -22,4 +27,32 @@ body {
   width: 200px;
   height: 200px;
   text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+  color: #212121;
+  background-color: transparent;
+}
+
+.item img {
+  object-fit: cover;
+  height: 148px;
+  width: 200px;
+}
+
+img {
+  border-style: none;
+}
+
+h3 {
+  margin: 0;
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
