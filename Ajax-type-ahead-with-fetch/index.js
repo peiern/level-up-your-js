@@ -13,13 +13,21 @@ function findMatches(wordToMatch, cities) {
   });
 }
 
+function numberWithCommas(x){
+  return x.toString().replace(/\B(?=(\d{3})+(?!(\d)))/g, ',');
+}
+
 function displayMatches() {
   const matchArray = findMatches(this.value, cities);
   const html = matchArray.map(place => {
+    // to highlight the words searched
+    const regex = new RegExp(this.value, 'gi');
+    const cityName = place.city.replace(regex, (match) => `<span class="hl">${match}</span>`);
+    const stateName = place.state.replace(regex, (match) => `<span class="hl">${match}</span>`);
     return `
       <li>
-        <span class="name">${place.city}, ${place.state}</span>
-        <span class="population">${place.population}</span>
+        <span class="name">${cityName}, ${stateName}</span>
+        <span class="population">${numberWithCommas(place.population)}</span>
     `
   }).join('');
   suggestions.innerHTML = html;
