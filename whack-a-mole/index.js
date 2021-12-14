@@ -19,3 +19,15 @@ function randHole(holes) {
   lastHole = hole;
   return hole;
 }
+
+// a function for popping up moles
+function popUp() {
+  const time = randTime(200, 1000);
+  const hole = randHole(holes);
+  hole.classList.add('up');
+  // let mole disappear automatically
+  setTimeout(() => {
+    hole.classList.remove('up');
+    popUp(); // restart game again after mole disappears
+  }, time);
+}
