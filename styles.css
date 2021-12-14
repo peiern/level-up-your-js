@@ -3,16 +3,18 @@
 }
 
 .items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-  background-size: cover;
-  background-position: center;
-  height: 180px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+}
+
+.item {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px; */
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
 }
