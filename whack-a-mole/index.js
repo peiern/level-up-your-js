@@ -2,7 +2,8 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 let lastHole;
-let timeUp = false
+let timeUp = false;
+let score = 0;
 
 // a function that gives us a random amt of time between min and max
 function randTime(min, max) {
@@ -22,7 +23,7 @@ function randHole(holes) {
 
 // a function for popping up moles
 function popUp() {
-  const time = randTime(200, 1000);
+  const time = randTime(300, 1000);
   const hole = randHole(holes);
   hole.classList.add('up');
   // let mole disappear automatically
@@ -35,8 +36,19 @@ function popUp() {
 function startGame() {
   scoreBoard.textContent = 0;
   timeUp = false;
+  score = 0;
   popUp();
   setTimeout(() => timeUp = true, 10000);
 }
 
 // function to hit the mole
+function hit(e) {
+  if(!e.isTrusted) return; // isTrusted is from the DOM when a mouse event happened
+  score++;
+  this.classList.remove('up');
+  scoreBoard.textContent = score;
+}
+
+moles.forEach(mole => {
+  mole.addEventListener('click', hit)
+});
