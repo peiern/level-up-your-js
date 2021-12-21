@@ -29,6 +29,11 @@ body {
   text-align: center;
   display: inline-block;
   vertical-align: middle;
+  transition: transform 0.2s;
+}
+
+.item:hover{
+  transform: scale(1.5);
 }
 
 a {
